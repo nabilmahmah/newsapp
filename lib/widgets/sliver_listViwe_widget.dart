@@ -15,7 +15,7 @@ class _NewsSliverListState extends State<NewsSliverList> {
   @override
   void initState() {
     super.initState();
-    future = NewsServices().getNews(category: "general");
+    future = NewsServices().getNews(category: widget.category);
   }
 
   @override

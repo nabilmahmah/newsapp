@@ -2,13 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:newsapp/views/category_viwe.dart';
 
 class category_card extends StatelessWidget {
-  const category_card({
-    required this.image,
-    required this.categoryName,
-    super.key,
-  });
+  const category_card({required this.image, required this.category, super.key});
   final String image;
-  final String categoryName;
+  final String category;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -17,7 +13,7 @@ class category_card extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return CategoryViwe(category: categoryName);
+              return CategoryViwe(category: category);
             },
           ),
         );
@@ -32,7 +28,7 @@ class category_card extends StatelessWidget {
             image: DecorationImage(image: AssetImage(image), fit: BoxFit.fill),
           ),
           child: Center(
-            child: Text(categoryName, style: TextStyle(color: Colors.white)),
+            child: Text(category, style: TextStyle(color: Colors.white)),
           ),
         ),
       ),
